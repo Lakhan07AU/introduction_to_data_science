@@ -1,0 +1,58 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Fake Job Posting Detector</title>
+    <style>
+        body { font-family: 'Segoe UI', sans-serif; background: #f4f6f9; margin: 0; padding: 0; }
+        .navbar { background: #2c3e50; padding: 15px 40px; color: white; display: flex; justify-content: space-between; align-items: center; }
+        .navbar h2 { margin: 0; }
+        .navbar a { color: white; text-decoration: none; margin-left: 25px; }
+        .navbar a:hover { color: #f1c40f; }
+        .container { width: 70%; margin: 50px auto; background: white; padding: 40px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+        textarea { width: 100%; height: 200px; padding: 12px; font-size: 16px; border: 1px solid #ccc; border-radius: 8px; resize: none; margin-top: 15px; }
+        .buttons { text-align: center; margin-top: 20px; }
+        button { background: #27ae60; color: white; padding: 12px 25px; border: none; cursor: pointer; font-size: 16px; border-radius: 6px; margin: 0 10px; }
+        button:hover { background: #1e8449; }
+        .refresh-btn { background: #e74c3c; }
+        .refresh-btn:hover { background: #c0392b; }
+        .result { margin-top: 25px; font-size: 22px; font-weight: bold; text-align: center; }
+        .footer { background: #2c3e50; color: white; text-align: center; padding: 15px; margin-top: 40px; }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <div class="navbar">
+        <h2>Fake Job Detector</h2>
+        <div>
+            <a href="/">Home</a>
+            <a href="/about">About</a>
+            <a href="/contact">Contact</a>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container">
+        <h1>Check Job Description</h1>
+        <p>Paste a job description below to check if it is real or fake.</p>
+
+        <form action="/predict" method="POST">
+            <textarea name="jobtext" placeholder="Paste job description here...">{{ request.form.get('jobtext', '') }}</textarea>
+            <div class="buttons">
+                <button type="submit">Check</button>
+                <button type="button" class="refresh-btn" onclick="window.location.href='/'">Refresh</button>
+            </div>
+        </form>
+
+        {% if prediction %}
+            <p class="result" style="color: {{color}};">Prediction: {{prediction}}</p>
+        {% endif %}
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <p>&copy; 2026 Fake Job Detector | Designed by Lakhan</p>
+    </div>
+
+</body>
+</html>
