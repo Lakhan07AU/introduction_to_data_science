@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>About Project - Fake Job Detector</title>
+    <style>
+        body { font-family: 'Segoe UI', sans-serif; background: #f4f6f9; margin: 0; padding: 0; }
+        .navbar { background: #2c3e50; padding: 15px 40px; color: white; display: flex; justify-content: space-between; align-items: center; }
+        .navbar h2 { margin: 0; }
+        .navbar a { color: white; text-decoration: none; margin-left: 25px; }
+        .navbar a:hover { color: #f1c40f; }
+        .container { width: 70%; margin: 50px auto; background: white; padding: 40px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+        h1, h2 { color: #2c3e50; }
+        p, ul { font-size: 16px; color: #555; line-height: 1.6; }
+        .footer { background: #2c3e50; color: white; text-align: center; padding: 15px; margin-top: 40px; }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <div class="navbar">
+        <h2>Fake Job Detector</h2>
+        <div>
+            <a href="/">Home</a>
+            <a href="/about">About</a>
+            <a href="/contact">Contact</a>
+        </div>
+    </div>
+
+    <!-- About Content -->
+    <div class="container">
+        <h1>About This Project</h1>
+
+        <h2>Body</h2>
+        <p>
+            While working on this project, I gained hands-on experience in building a complete 
+            <strong>Natural Language Processing (NLP) pipeline</strong>. I started with raw text data 
+            from the Kaggle Fake Job Posting dataset and learned how to transform it into meaningful 
+            features that a machine learning model can understand.
+        </p>
+        <p>
+            I applied several preprocessing steps such as converting text to lowercase, removing 
+            punctuation, handling numbers, stopword removal, tokenization, stemming, and normalization. 
+            These steps helped me clean the dataset and prepare it for feature extraction.
+        </p>
+        <p>
+            For feature engineering, I explored both Bag of Words and TF-IDF, but I found TF-IDF 
+            to be more effective for this task. I then built a Logistic Regression model, trained it 
+            on balanced data, and evaluated it using metrics like Accuracy, Precision, Recall, 
+            F1-Score, and Confusion Matrix.
+        </p>
+        <p>
+            Finally, I integrated the trained model into a Flask web application, where users can 
+            paste a job description and instantly check if it is real or fake. This gave me practical 
+            exposure to deploying machine learning models in a real-world interface.
+        </p>
+
+        <h2>Conclusion</h2>
+        <p>
+            In conclusion, this project allowed me to connect theory with practice. I not only 
+            understood the importance of preprocessing and feature extraction but also experienced 
+            how models are trained, evaluated, and deployed. The Fake Job Detector demonstrates 
+            how NLP can be applied to solve real-world problems, and completing this project has 
+            strengthened my confidence in working with text data and machine learning systems.
+        </p>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <p>&copy; 2026 Fake Job Detector | Designed by Lakhan</p>
+    </div>
+
+</body>
+</html>
